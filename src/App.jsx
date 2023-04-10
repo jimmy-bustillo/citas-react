@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import Formulario from './components/Formulario'
+import Hedaer from './components/Header'
+import ListadoPacientes from './components/ListadoPacientes'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ 
   return (
-    <div className="App">
-      <h1>Hola Mundo</h1>
-    </div>
+    <>
+      <Hedaer/>
+      <Formulario/>
+      <ListadoPacientes/>
+    </>
   )
 }
 
