@@ -11,6 +11,13 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
   const [error, setError] = useState(false);
 
+  const generarId = () => {
+    const random = Math.random().toString(36).substr(2)
+    const fecha = Date.now().toString(36)
+
+    return random + fecha
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -29,6 +36,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
       email,
       fecha,
       sintomas,
+      id: generarId()
     };
 
     setPacientes([...pacientes, objetoPaciente]);
@@ -108,7 +116,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
           <input
             id="email"
             type="email"
-            placeholder="Email de Contacto`"
+            placeholder="Email de Contacto"
             className="border-2 w-full p-2 mt-2 placeholder-grey-400 rounded-md"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
